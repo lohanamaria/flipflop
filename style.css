@@ -1,0 +1,93 @@
+:root {
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --primary: #2b5dab;
+    --border: #dcdcdc;
+    --header: #eef2f7;
+  }
+
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+  }
+
+  select, input, button {
+    width: 100%;
+    max-width: 320px;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    opacity: 0.9;
+  }
+
+  .bit-input {
+    background: var(--card);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid var(--border);
+    text-align: center;
+    font-size: 14px;
+  }
+
+  th {
+    background: var(--header);
+    font-weight: 600;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 18px;
+    }
+
+    th, td {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }

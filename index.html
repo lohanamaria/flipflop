@@ -8,9 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+<h2>TESTE</h2>
+
+<label>Número de bits:</label><br>
+<select id="bits" onchange="criarEntradas()">
+  <option value="1">1</option>
+  <option value="2" selected>2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+
+<div id="entradas" class="inputs-grid"></div>
+
+<button onclick="gerar()">gerar</button>
+
+<div id="saida"></div>
+ </div>
 
     
-    <script src="script.js"></script> 
+    <script src="back.js"></script> 
 </body>
 </html>
