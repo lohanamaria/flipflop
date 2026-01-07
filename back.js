@@ -39,12 +39,12 @@ function gerar() {
 
   let html = "<table><tr>";
 
-  // estado atual
+  // estado atual q
   for (let i = bits - 1; i >= 0; i--) {
     html += `<th class="bit-${i}">q${i}a</th>`;
   }
 
-  // estado futuro
+  // estado futuro q+1
   for (let i = bits - 1; i >= 0; i--) {
     html += `<th class="bit-${i}">q${i}f</th>`;
   }
