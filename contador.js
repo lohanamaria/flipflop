@@ -28,8 +28,8 @@ function gerar() {
 
   html += "<tr>";
   html += `<th colspan="${bits}">Estado atual (Qn)</th>`;
-  html += `<th colspan="${bits}">Estado uturo (Qn+1)</th>`;
-  html += `<th colspan="${bits * 2}">Entradas JK</th>`;
+  html += `<th colspan="${bits}">Estado futuro (Qn+1)</th>`;
+  html += `<th colspan="${bits * 2}">Entradas</th>`;
   html += "</tr>";
 
   html += "<tr>";
