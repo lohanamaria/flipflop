@@ -61,5 +61,30 @@ function gerar() {
   html += "</table>";
 
   document.getElementById("saida").innerHTML =
-    `<div class="table-wrapper">${html}</div>`;
+    `<div class="table-wrapper">${html}</div>`;  
+}
+
+// limpa a tabela
+function limparTabela() {
+  document.getElementById("saida").innerHTML = "";
+}
+
+// exporta tabela como img
+function exportarImagem() {
+  const area = document.querySelector(".table-wrapper");
+
+  if (!area) {
+    alert("gere a tabela antes de exportar.");
+    return;
+  }
+
+  html2canvas(area, {
+    backgroundColor: "#ffffff",
+    scale: 2
+  }).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "teste.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
 }
