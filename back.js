@@ -89,3 +89,19 @@ function gerar() {
 }
 
 criarEntradas();
+
+function toggleDarkMode() {
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("darkMode", isDark);
+
+  const toggle = document.getElementById("darkToggle");
+  if (toggle) toggle.checked = isDark;
+}
+
+window.addEventListener("load", () => {
+  const isDark = localStorage.getItem("darkMode") === "true";
+  document.body.classList.toggle("dark", isDark);
+
+  const toggle = document.getElementById("darkToggle");
+  if (toggle) toggle.checked = isDark;
+});
