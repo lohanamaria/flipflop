@@ -6,17 +6,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<header class="navbar">
+  <h1>contador digital</h1>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="contador.html">contador</a>
+    <a href="flipflop.html">flip-flop</a>
+  </nav>
+</header>
 <div class="container">
-  <h2> contador em entrada dec</h2>
-<div class="theme-switch">
-  <span>☀️</span>
-  <label class="switch">
-    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
-    <span class="slider"></span>
-  </label>
-  <span>🌙</span>
-</div>
 
   <p>
     digite a seq de estados em <b>decimal</b>
@@ -25,7 +23,7 @@
 
   <input id="seq" type="text" placeholder="0 1 2 3 0">
 
- <button onclick="gerar()">gerar</button>
+ <button onclick="gerarContador()">gerar</button>
  <button onclick="limparTabela()">limpar tabela</button>
  <button onclick="exportarImagem()">exportar como img</button>
 
@@ -33,7 +31,7 @@
   <div id="saida"></div>
 
   <p style="margin-top:20px;">
-    <a href="index.html">← voltar para v por flipflop</a>
+    <a href="index.html">voltar</a>
   </p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdpd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+  <h1>contador digital</h1>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="contador.html">contador</a>
+    <a href="flipflop.html">flip-flop</a>
+  </nav>
+</header>
+    <div class="container">
+
+
+<label>n de bits:</label><br>
+<select id="bits" onchange="criarEntradas()">
+  <option value="1">1</option>
+  <option value="2" selected>2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+
+<div id="entradas"></div>
+
+<div class="acoes">
+  <button onclick="addLinha()">+ adicionar estado</button>
+  <button onclick="gerar()">gerar</button>
+</div>
+
+<p style="margin-top:20px;">
+  <a href="contador.html">voltar</a>
+</p>
+ 
+<div id="saida"></div>
+ </div>
+    
+    <script src="back.js"></script> 
+</body>
+</html>

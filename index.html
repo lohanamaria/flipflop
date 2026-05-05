@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pdpd</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>pdpd</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-<h2>TESTE</h2>
-<div class="theme-switch">
-  <span>☀️</span>
-  <label class="switch">
-    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
-    <span class="slider"></span>
-  </label>
-  <span>🌙</span>
-</div>
 
 
-<label>n de bits:</label><br>
-<select id="bits" onchange="criarEntradas()">
-  <option value="1">1</option>
-  <option value="2" selected>2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-</select>
+<header class="navbar">
+  <h1>contador digital</h1>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="contador.html">contador</a>
+    <a href="flipflop.html">flip-flop</a>
+  </nav>
+</header>
 
-<div id="entradas" class="inputs-grid"></div>
+<section class="hero">
+  <h2>gere tabelas de flip-flops automaticamente</h2>
+  <p>
+    ferramenta para montar tabelas de transição e entradas JK a partir de sequências de estados.
+  </p>
 
-<button onclick="gerar()">gerar</button>
-<p style="margin-top:20px;">
-  <a href="contador.html">→ v para contadores (entrada decimal)</a>
-</p>
+  <div class="hero-buttons">
+    <a href="contador.html" class="btn">usar contador</a>
+    <a href="flipflop.html" class="btn secondary">usar flip-flop</a>
+  </div>
+</section>
 
-<div id="saida"></div>
- </div>
+<section class="info">
 
-    
-    <script src="back.js"></script> 
+  <div class="card">
+    <h3>objetivo</h3>
+    <p>
+      facilitar a construção de tabelas de estados e excitação de flip-flops,
+      automatizando cálculos que normalmente são feitos manualmente.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>teoria básica</h3>
+    <p>
+      contadores digitais são circuitos sequenciais que mudam de estado a cada pulso.
+      flip-flops JK permitem controlar essas transições através das entradas J e K.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>como usar</h3>
+    <ul>
+      <li>vá para "contador" ou "flip-flop"</li>
+      <li>digite a sequência de estados</li>
+      <li>clique em gerar</li>
+      <li>visualize a tabela pronta</li>
+    </ul>
+  </div>
+
+</section>
+
 </body>
 </html>

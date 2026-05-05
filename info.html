@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+</header>
+
+  <h2>sobre</h2>
+
+  <h3>objetivo</h3>
+  <p>
+    gerar automaticamente a tabela de transição de estados e as entradas
+    dos flip-flops JK a partir de uma sequência fornecida pelo usuário.
+  </p>
+
+  <h3>teoria (resumo)</h3>
+  <p>
+    em circuitos sequenciais, o estado atual (Qn) evolui para um próximo estado (Qn+1).
+    para que essa transição ocorra usando flip-flops JK, é necessário determinar
+    os valores de J e K para cada bit.
+  </p>
+
+  <table>
+    <tr>
+      <th>Qn</th>
+      <th>Qn+1</th>
+      <th>J</th>
+      <th>K</th>
+    </tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>X</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>X</td></tr>
+    <tr><td>1</td><td>0</td><td>X</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>X</td><td>0</td></tr>
+  </table>
+
+  <p style="margin-top:10px;">
+    o sistema considera um ciclo: o último estado volta para o primeiro.
+  </p>
+
+  <h3>como usar</h3>
+  <ol>
+    <li>digite os estados (ex: <b>2 3 1</b>)</li>
+    <li>clique em <b>gerar</b></li>
+    <li>analise a tabela criada automaticamente</li>
+  </ol>
+
+  <h3>testar rápido</h3>
+  <div class="examples">
+    <button onclick="usar('0 1 2 3')">0 1 2 3</button>
+    <button onclick="usar('2 3 1')">2 3 1</button>
+    <button onclick="usar('0 2 5 7')">0 2 5 7</button>
+  </div>
+
+  <p style="margin-top:20px;">
+    <a href="contador.html">ir para o simulador →</a>
+  </p>
+
+</div>
+
+<script>
+function usar(seq) {
+  localStorage.setItem("seqTeste", seq);
+  window.location.href = "contador.html";
+}
+</script>
+
+</body>
+</html>
