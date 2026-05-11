@@ -12,8 +12,9 @@
   <h1>contador digital</h1>
   <nav>
     <a href="index.html">home</a>
-    <a href="contador.html">contador</a>
-    <a href="flipflop.html">flip-flop</a>
+    <a href="info.html">info</a>
+    <a href="contador.html">decimal</a>
+    <a href="flipflop.html">binário</a>
   </nav>
 </header>
     <div class="container">
@@ -31,16 +32,17 @@
 
 <div class="acoes">
   <button onclick="addLinha()">+ adicionar estado</button>
+  <button onclick="removerLinha()">- remover estado</button>
   <button onclick="gerar()">gerar</button>
+  <button onclick="limparTabela()">limpar tabela</button>
+  <button onclick="exportarImagem()">exportar como img</button>
 </div>
 
-<p style="margin-top:20px;">
-  <a href="contador.html">voltar</a>
-</p>
- 
+<a class="voltar" href="index.html">← voltar</a>
 <div id="saida"></div>
  </div>
     
     <script src="back.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </body>
 </html>

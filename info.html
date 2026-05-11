@@ -5,68 +5,134 @@
   <title>info</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<header class="navbar">
+  <h1>contador digital</h1>
+
+  <nav>
+    <a href="index.html">home</a>
+    <a href="info.html">info</a>
+    <a href="contador.html">decimal</a>
+    <a href="flipflop.html">binário</a>
+  </nav>
 </header>
 
-  <h2>sobre</h2>
+<div class="container">
 
-  <h3>objetivo</h3>
-  <p>
-    gerar automaticamente a tabela de transição de estados e as entradas
-    dos flip-flops JK a partir de uma sequência fornecida pelo usuário.
-  </p>
-
-  <h3>teoria (resumo)</h3>
-  <p>
-    em circuitos sequenciais, o estado atual (Qn) evolui para um próximo estado (Qn+1).
-    para que essa transição ocorra usando flip-flops JK, é necessário determinar
-    os valores de J e K para cada bit.
-  </p>
-
-  <table>
-    <tr>
-      <th>Qn</th>
-      <th>Qn+1</th>
-      <th>J</th>
-      <th>K</th>
-    </tr>
-    <tr><td>0</td><td>0</td><td>0</td><td>X</td></tr>
-    <tr><td>0</td><td>1</td><td>1</td><td>X</td></tr>
-    <tr><td>1</td><td>0</td><td>X</td><td>1</td></tr>
-    <tr><td>1</td><td>1</td><td>X</td><td>0</td></tr>
-  </table>
-
-  <p style="margin-top:10px;">
-    o sistema considera um ciclo: o último estado volta para o primeiro.
-  </p>
-
-  <h3>como usar</h3>
-  <ol>
-    <li>digite os estados (ex: <b>2 3 1</b>)</li>
-    <li>clique em <b>gerar</b></li>
-    <li>analise a tabela criada automaticamente</li>
-  </ol>
-
-  <h3>testar rápido</h3>
-  <div class="examples">
-    <button onclick="usar('0 1 2 3')">0 1 2 3</button>
-    <button onclick="usar('2 3 1')">2 3 1</button>
-    <button onclick="usar('0 2 5 7')">0 2 5 7</button>
+  <div class="card-info">
+    <h2>
+      Exemplo de material obtido de (Floyd, 20..., pág. 468-469)
+      de projeto de contador de sequência aleatória
+    </h2>
   </div>
 
-  <p style="margin-top:20px;">
-    <a href="contador.html">ir para o simulador →</a>
+  <div class="card-info">
+    <h3>Passo 1</h3>
+
+    <p>
+      Realizar o diagrama de estados
+    </p>
+
+    <img src="imagens/figura832.png" class="img-teoria">
+
+    <p class="legenda">
+      Figura 8-32 do livro
+    </p>
+  </div>
+
+  <div class="card-info">
+    <h3>Passo 2</h3>
+
+    <p>
+      Criar a tabela de estados (ou tabela do próximo estado)
+    </p>
+
+    <img src="imagens/tabela89.png" class="img-teoria">
+
+    <p class="legenda">
+      Tabela 8-9 — tabela do próximo estado do livro
+    </p>
+  </div>
+
+  <div class="card-info">
+    <h3>Passo 3</h3>
+
+    <p>
+      A tabela de transição para o flip-flop JK é repetida a seguir
+    </p>
+
+    <img src="imagens/tabela810.png" class="img-teoria">
+
+    <p class="legenda">
+      Tabela 8-10 — tabela de transição para um flip-flop JK do livro
+    </p>
+
+    <img src="imagens/tabela.png" class="img-teoria">
+
+    <p class="legenda">
+      Tabela do contador. Fonte: Autoral.
+    </p>
+  </div>
+
+  <div class="card-info">
+    <h3>Passo 4</h3>
+
+    <p>
+      As entradas J e K são inseridas no mapa de Karnaugh do estado atual.
+      Condições don't care podem ser colocadas nas células correspondentes
+      aos estados inválidos, nesse exemplo: 001, 011, 100 e 110.
+    </p>
+  </div>
+
+  <div class="card-info">
+    <h3>Passo 5</h3>
+
+    <p>
+      Do mapa de K obtêm-se as expressões para cada entrada J e K.
+      As expressões obtidas dos mapas são as seguintes:
+    </p>
+
+    <p>J₀ = 1, K₀ = Q̅₂</p>
+
+    <p>J₁ = 1, K₁ = 1</p>
+
+    <p>J₂ = 1, K₂ = Q₁</p>
+  </div>
+
+  <div class="card-info">
+    <h3>Passo 6</h3>
+
+    <p>
+      A implementação do contador é mostrada na figura
+    </p>
+
+    <img src="imagens/implementacao.png" class="img-teoria">
+
+    <p class="legenda">
+      Figura 8-34 — implementação do contador do livro
+    </p>
+  </div>
+
+<div class="referencias">
+  <h3>Referências</h3>
+
+  <p>
+    FLOYD, Thomas L.
+    <b>Sistemas Digitais: Fundamentos e Aplicações.</b>
+    9. ed. Porto Alegre: Bookman, 2007.
   </p>
 
-</div>
+  <p><b>ISBN:</b> 9788560031931</p>
 
-<script>
-function usar(seq) {
-  localStorage.setItem("seqTeste", seq);
-  window.location.href = "contador.html";
-}
-</script>
+  <p>
+    Material utilizado como base teórica para o desenvolvimento
+    do projeto e dos exemplos apresentados nesta página.
+  </p>
+</div>
+<a class="voltar" href="index.html">← voltar</a>
+</div>
 
 </body>
 </html>

@@ -1,11 +1,66 @@
 function criarEntradas() {
   const div = document.getElementById("entradas");
 
-  div.innerHTML = `
-    <div id="grid-estados"></div>
-  `;
+  // salva estados antigos
+  const valores = [];
 
-  addLinha(); // primeira linha
+  document.querySelectorAll(".linha").forEach(linha => {
+    const linhaValores = [];
+
+    linha.querySelectorAll("input").forEach(input => {
+      linhaValores.push(input.value);
+    });
+
+    valores.push(linhaValores);
+  });
+
+  // limpa apenas grid
+  div.innerHTML = `<div id="grid-estados"></div>`;
+
+  // recria estados antigos
+  if (valores.length > 0) {
+    valores.forEach(v => addLinha(v));
+  } else {
+    addLinha();
+  }
+}
+
+// adiciona nova linha de estado
+function addLinha(valores = []) {
+  const bits = parseInt(document.getElementById("bits").value);
+  const grid = document.getElementById("grid-estados");
+
+  let linha = `<div class="linha">`;
+
+  for (let i = bits - 1; i >= 0; i--) {
+    const valor = valores[bits - 1 - i] || "";
+
+    linha += `
+      <input
+        type="text"
+        maxlength="1"
+        value="${valor}"
+        placeholder="q${i}"
+        oninput="validarBit(this)"
+      >
+    `;
+  }
+
+  linha += `</div>`;
+
+  grid.insertAdjacentHTML("beforeend", linha);
+}
+
+function validarBit(input) {
+  input.value = input.value.replace(/[^01]/g, "");
+}
+
+function removerLinha() {
+  const linhas = document.querySelectorAll(".linha");
+
+  if (linhas.length > 1) {
+    linhas[linhas.length - 1].remove();
+  }
 }
 
 // tabela JK
@@ -14,22 +69,6 @@ function jk(Q, Qf) {
   if (Q === 0 && Qf === 1) return ["1", "X"];
   if (Q === 1 && Qf === 0) return ["X", "1"];
   if (Q === 1 && Qf === 1) return ["X", "0"];
-}
-
-// adiciona nova linha de estado
-function addLinha() {
-  const bits = parseInt(document.getElementById("bits").value);
-  const grid = document.getElementById("grid-estados");
-
-  let linha = `<div class="linha">`;
-
-  for (let i = bits - 1; i >= 0; i--) {
-    linha += `<input type="number" min="0" max="1" placeholder="q${i}">`;
-  }
-
-  linha += `</div>`;
-
-  grid.innerHTML += linha;
 }
 
 // função principal
@@ -120,3 +159,31 @@ function gerar() {
 
 // inicia
 criarEntradas();
+
+// limpa tabela
+function limparTabela() {
+  document.getElementById("saida").innerHTML = "";
+}
+
+// exporta tabela como imagem
+function exportarImagem() {
+  const area = document.querySelector(".table-wrapper");
+
+  if (!area) {
+    alert("gere a tabela antes de exportar");
+    return;
+  }
+
+  html2canvas(area, {
+    backgroundColor: "#ffffff",
+    scale: 2
+  }).then(canvas => {
+
+    const link = document.createElement("a");
+
+    link.download = "contador-jk.png";
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+  });
+}

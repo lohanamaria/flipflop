@@ -9,18 +9,23 @@
 <header class="navbar">
   <h1>contador digital</h1>
   <nav>
-    <a href="index.html">home</a>
-    <a href="contador.html">contador</a>
-    <a href="flipflop.html">flip-flop</a>
+     <a href="index.html">home</a>
+    <a href="info.html">info</a>
+    <a href="contador.html">decimal</a>
+    <a href="flipflop.html">binário</a>
   </nav>
 </header>
 <div class="container">
 
   <p>
-    digite a seq de estados em <b>decimal</b>
-    (ex: 0 1 3 7 0):
+    Digite a sequência de estados em <b>decimal</b>
   </p>
-
+  <p>
+   Utilize um espaço entre os números
+  </p>
+    <p>
+    (Ex.: 0 1 3 7 0) 
+  </p>
   <input id="seq" type="text" placeholder="0 1 2 3 0">
 
  <button onclick="gerarContador()">gerar</button>
@@ -30,9 +35,8 @@
 
   <div id="saida"></div>
 
-  <p style="margin-top:20px;">
-    <a href="index.html">voltar</a>
-  </p>
+<a class="voltar" href="index.html">← voltar</a>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="contador.js"></script>
